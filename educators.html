@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Educators — demo UI</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="note">نموذج تواصل شكلي، مش بيوصل لـ UWorld.</div>
+  <header class="top">
+    <div class="wrap top-row">
+      <a class="logo" href="index.html">UWorld</a>
+      <nav class="nav">
+        <a href="products.html">Products</a>
+        <a href="educators.html">Educators</a>
+        <a href="qbank.html">QBank demo</a>
+      </nav>
+    </div>
+  </header>
+  <main class="page">
+    <div class="wrap narrow">
+      <h1>Educators</h1>
+      <p>Programs on the public site are offered a reporting dashboard for individual and group performance. This form does not send anything.</p>
+      <form id="contact">
+        <label>School <input name="school" placeholder="School name" /></label>
+        <label>Email <input type="email" placeholder="name@school.edu" /></label>
+        <label>Note <input placeholder="What do you want to change?" /></label>
+        <button class="btn" type="submit">Contact us</button>
+        <p class="form-note" id="msg"></p>
+      </form>
+    </div>
+  </main>
+  <script>
+    document.getElementById("contact").onsubmit = (e) => {
+      e.preventDefault();
+      document.getElementById("msg").textContent = "متخزّنش. النموذج للشكل فقط.";
+    };
+  </script>
+</body>
+</html>

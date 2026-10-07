@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Product — demo UI</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="note">صفحة منتج شكلية. الأسعار والاشتراك غير حقيقيين.</div>
+  <header class="top">
+    <div class="wrap top-row">
+      <a class="logo" href="index.html">UWorld</a>
+      <nav class="nav">
+        <a href="products.html">Products</a>
+        <a href="qbank.html">QBank demo</a>
+        <a href="dashboard.html">Dashboard</a>
+      </nav>
+      <div class="top-actions"><a class="btn" href="qbank.html">Try sample questions</a></div>
+    </div>
+  </header>
+  <main class="page">
+    <div class="wrap split-grid">
+      <div>
+        <p class="eyebrow" id="tag">Product</p>
+        <h1 id="title">Exam prep</h1>
+        <p class="lede" id="blurb"></p>
+        <ul class="features" id="features"></ul>
+        <a class="btn" href="qbank.html">Open the demo QBank</a>
+      </div>
+      <div class="panel">
+        <h3>Demo access lengths</h3>
+        <p>30 days · 90 days · 180 days · 360 days</p>
+        <p>الأرقام هنا للشكل فقط، مش أسعار UWorld.</p>
+      </div>
+    </div>
+  </main>
+  <script>
+    const catalog = {
+      usmle: ["Medical", "USMLE QBank", "Step-style items, tutor mode, timed blocks, and self-assessment shells.", ["Thousands of slots you can fill", "Subject and system filters", "Explanation panel"]],
+      comlex: ["Medical", "COMLEX", "Same practice shell, labeled for COMLEX.", ["Osteopathic item slots", "Timed blocks"]],
+      abim: ["Boards", "ABIM and ABFM", "Board-review layout with performance tags.", ["Topic filters", "Explanation panel"]],
+      nclex: ["Nursing", "NCLEX", "Prioritization and alternate-format practice.", ["SATA-ready choices", "Rationale column"]],
+      fnp: ["Nursing", "FNP", "Nurse practitioner review shell.", ["System tags", "Notebook link"]],
+      sat: ["College prep", "SAT, ACT, AP", "Section practice for college admissions exams.", ["Reading and math slots", "Score placeholder"]],
+      mcat: ["Grad school", "MCAT", "Passage plus discrete questions.", ["Science sections", "Explanation panel"]],
+      cpa: ["Accounting", "CPA, CMA, CIA", "Accounting exam review shell.", ["Multiple-choice slots", "Simulation placeholder"]],
+      cfa: ["Finance", "CFA", "Item-set style layout.", ["Levels 1 to 3 labels", "Ethics sample"]],
+      mbe: ["Legal", "MBE", "Multistate bar practice shell.", ["Subject filters", "Explanation panel"]],
+      naplex: ["Pharmacy", "NAPLEX", "Pharmacy licensure practice shell.", ["Drug topic tags", "Calculation placeholder"]]
+    };
+    const id = new URLSearchParams(location.search).get("id") || "usmle";
+    const item = catalog[id] || catalog.usmle;
+    document.getElementById("tag").textContent = item[0];
+    document.getElementById("title").textContent = item[1];
+    document.getElementById("blurb").textContent = item[2];
+    document.getElementById("features").innerHTML = item[3].map((f) => `<li>${f}</li>`).join("");
+  </script>
+</body>
+</html>

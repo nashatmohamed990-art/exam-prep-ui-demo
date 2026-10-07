@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>UWorld UI recreation — Test Prep</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="note">نسخة واجهة للتعديل، مش الموقع الرسمي. مفيش تسجيل دخول حقيقي.</div>
+
+  <header class="top">
+    <div class="wrap top-row">
+      <a class="logo" href="#top">UWorld</a>
+      <nav class="nav">
+        <a href="products.html">Products</a>
+        <a href="qbank.html">QBank demo</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="library.html">Library</a>
+        <a href="educators.html">Educators</a>
+      </nav>
+      <div class="top-actions">
+        <a class="ghost" href="#signin">Sign in</a>
+        <a class="btn" href="#products">Explore products</a>
+      </div>
+      <button class="burger" id="burger" aria-label="Menu">Menu</button>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <p class="eyebrow">Test prep for NCLEX, SAT, ACT, MCAT, USMLE and more</p>
+          <h1>We make really hard stuff easy to understand</h1>
+          <p class="lede">Customizable learning tools for your high-stakes exam. Practice questions, visuals, and explanations built for the day results actually count.</p>
+          <div class="hero-actions">
+            <a class="btn" href="#products">Explore our products</a>
+            <a class="btn btn-line" href="#stories">Read student stories</a>
+          </div>
+        </div>
+        <div class="screen" aria-hidden="true">
+          <div class="screen-bar">
+            <span></span><span></span><span></span>
+            <b>Practice</b>
+            <em>07:47</em>
+          </div>
+          <div class="screen-body">
+            <div>
+              <p>A patient has chest pain after blunt trauma. Breath sounds are diminished on the left. Which diagnosis is most likely?</p>
+              <ul>
+                <li>Blunt aortic injury</li>
+                <li class="on">Hemothorax</li>
+                <li>Cardiac tamponade</li>
+                <li>Tracheobronchial injury</li>
+              </ul>
+              <div class="chip">Correct · 77% answered this way</div>
+            </div>
+            <div class="diagram">
+              <strong>Explanation</strong>
+              <div class="lungs"></div>
+              <small>Each side of the chest can hold a large share of blood volume.</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="news">
+      <div class="wrap news-row">
+        <span>Company news</span>
+        <p>UWorld announces acquisition of Surgent Accounting & Financial Education.</p>
+        <a href="#news">Read more</a>
+      </div>
+    </section>
+
+    <section class="awards">
+      <div class="wrap">
+        <p class="eyebrow">Awards and recognition</p>
+        <div class="award-row">
+          <article><b>QBank</b><span>Exam-style questions with full rationales</span></article>
+          <article><b>Visuals</b><span>Diagrams that make mechanisms stick</span></article>
+          <article><b>Analytics</b><span>See weak topics before test day</span></article>
+          <article><b>Educators</b><span>Dashboards for programs and cohorts</span></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="products" id="products">
+      <div class="wrap">
+        <h2>Discover the tools students and professionals rely on when exam results really count.</h2>
+        <div class="grid">
+          <article class="card">
+            <p class="tag">Medical</p>
+            <h3>USMLE, COMLEX, ABIM</h3>
+            <p>Clinical scenarios, self-assessments, and explanations written for Step-level reasoning.</p>
+          </article>
+          <article class="card">
+            <p class="tag">Nursing</p>
+            <h3>NCLEX-RN and NCLEX-PN</h3>
+            <p>Prioritization items, SATA practice, and rationales that show why each choice is right or wrong.</p>
+          </article>
+          <article class="card">
+            <p class="tag">College prep</p>
+            <h3>SAT, ACT, AP</h3>
+            <p>Question banks and review tools for the exams that shape college applications.</p>
+          </article>
+          <article class="card">
+            <p class="tag">Grad school</p>
+            <h3>MCAT</h3>
+            <p>Passage practice with graphics and explanations across the sciences.</p>
+          </article>
+          <article class="card">
+            <p class="tag">Accounting</p>
+            <h3>CPA, CMA, CIA</h3>
+            <p>Exam review plus continuing education after the Surgent acquisition.</p>
+          </article>
+          <article class="card">
+            <p class="tag">Finance</p>
+            <h3>CFA Levels 1–3</h3>
+            <p>Item-set practice and concept review for each level.</p>
+          </article>
+          <article class="card">
+            <p class="tag">Legal</p>
+            <h3>MBE and bar review</h3>
+            <p>Practice questions aimed at the multistate portion of the bar.</p>
+          </article>
+          <article class="card">
+            <p class="tag">Pharmacy</p>
+            <h3>NAPLEX and MPJE</h3>
+            <p>RxPrep-style review for licensure exams.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="stories" id="stories">
+      <div class="wrap">
+        <h2>What students say</h2>
+        <div class="quotes">
+          <blockquote>
+            <p>UWorld was central to my Step 1 preparation. It surfaced high-yield facts, taught more medicine than lectures, and kept my goals realistic.</p>
+            <footer>Ben · Step 1 student</footer>
+          </blockquote>
+          <blockquote>
+            <p>I did no other preparation than completing UWorld and moved from a 1390 to a 1510 on the SAT. Finish the questions and learn from the misses.</p>
+            <footer>Alex · SAT student</footer>
+          </blockquote>
+          <blockquote>
+            <p>The NCLEX prep has more rationales and diagrams than ATI, HESI, or LWW. More visual learning, and the objective of each question is clear.</p>
+            <footer>Jason · NCLEX student</footer>
+          </blockquote>
+          <blockquote>
+            <p>The questions, flowcharts, and imagery make hard residency material simple. I have not found study material of this quality elsewhere.</p>
+            <footer>Hari · ABIM student</footer>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <section class="split" id="educators">
+      <div class="wrap split-grid">
+        <div>
+          <h2>Educators: put your students on the path to success.</h2>
+          <p>Programs get access to a reporting dashboard with tools to monitor and compare individual and group performance.</p>
+          <a class="btn" href="#contact">Contact us</a>
+        </div>
+        <div class="panel" id="news">
+          <p class="eyebrow">Also on the page</p>
+          <h3>Shaping the future of education</h3>
+          <p>The public site invites people who want to build student-focused exam content to join the team.</p>
+          <a href="#careers">Join our team</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" id="careers">
+      <div class="wrap">
+        <h2>Are you interested in shaping the future of education?</h2>
+        <p>The original page points careers to the company jobs site. This button is only a placeholder.</p>
+        <a class="btn btn-light" href="#contact">Join our team</a>
+      </div>
+    </section>
+
+    <section class="signin" id="signin">
+      <div class="wrap narrow">
+        <h2>Sign in is not wired up</h2>
+        <p>دي واجهة بس. متدخلش بيانات حساب حقيقية هنا، ومفيش اتصال بموقع UWorld.</p>
+        <form id="fake">
+          <label>Email <input type="email" placeholder="name@school.edu" /></label>
+          <label>Password <input type="password" placeholder="••••••••" /></label>
+          <button class="btn" type="submit">Continue</button>
+          <p class="form-note" id="form-note"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contact">
+    <div class="wrap foot">
+      <div>
+        <a class="logo" href="#top">UWorld</a>
+        <p>Unofficial homepage recreation for editing. Not affiliated with UWorld, LLC.</p>
+      </div>
+      <div>
+        <b>Products</b>
+        <a href="#products">Medical</a>
+        <a href="#products">Nursing</a>
+        <a href="#products">College prep</a>
+        <a href="#products">Accounting</a>
+      </div>
+      <div>
+        <b>Company</b>
+        <a href="#educators">Educators</a>
+        <a href="#careers">Careers</a>
+        <a href="#stories">Stories</a>
+      </div>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

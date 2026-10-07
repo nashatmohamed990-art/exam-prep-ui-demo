@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>QBank demo</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="note">أسئلة أصلية للتجربة. مش من بنك UWorld، ومتقدرش تنسخ البنك المدفوع من هنا.</div>
+  <header class="top">
+    <div class="wrap top-row">
+      <a class="logo" href="index.html">UWorld</a>
+      <nav class="nav">
+        <a href="products.html">Products</a>
+        <a href="qbank.html">QBank demo</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="library.html">Library</a>
+      </nav>
+    </div>
+  </header>
+  <main class="page">
+    <div class="wrap">
+      <div class="q-top">
+        <div>
+          <p class="eyebrow" id="meta">Demo</p>
+          <h1>Create test</h1>
+        </div>
+        <div class="q-actions">
+          <button class="ghost" id="prev" type="button">Previous</button>
+          <button class="btn" id="next" type="button">Next</button>
+        </div>
+      </div>
+      <div class="screen q-screen">
+        <div class="screen-bar"><b id="count">1 / 8</b><em id="mode">Tutor</em></div>
+        <div class="screen-body">
+          <div>
+            <p id="stem"></p>
+            <ul id="choices"></ul>
+          </div>
+          <div class="diagram" id="explain">
+            <strong>Explanation</strong>
+            <p>اختار إجابة عشان تظهر التبرير.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="questions.js"></script>
+  <script>
+    const bank = readBank();
+    let index = 0;
+    let picked = Array(bank.length).fill(null);
+    const choices = document.getElementById("choices");
+    function render() {
+      const q = bank[index];
+      document.getElementById("meta").textContent = q.exam + " · " + q.system;
+      document.getElementById("count").textContent = (index + 1) + " / " + bank.length;
+      document.getElementById("stem").textContent = q.stem;
+      choices.innerHTML = "";
+      q.choices.forEach((text, i) => {
+        const li = document.createElement("li");
+        li.textContent = String.fromCharCode(65 + i) + ". " + text;
+        if (picked[index] === i) li.className = i === q.answer ? "on" : "bad";
+        li.onclick = () => {
+          picked[index] = i;
+          const box = document.getElementById("explain");
+          box.innerHTML = "<strong>" + (i === q.answer ? "Correct" : "Review") + "</strong><p>" + q.why + "</p>";
+          render();
+        };
+        choices.appendChild(li);
+      });
+      if (picked[index] === null) {
+        document.getElementById("explain").innerHTML = "<strong>Explanation</strong><p>اختار إجابة عشان تظهر التبرير.</p>";
+      }
+    }
+    document.getElementById("next").onclick = () => { index = Math.min(bank.length - 1, index + 1); render(); };
+    document.getElementById("prev").onclick = () => { index = Math.max(0, index - 1); render(); };
+    render();
+  </script>
+</body>
+</html>
